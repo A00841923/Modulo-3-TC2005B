@@ -1,12 +1,23 @@
-const btnDaleClick = document.getElementById("btnLogin");
+const btnLogin = document.getElementById("btnLogin");
 const username = document.getElementById("username");
+const password = document.getElementById("password");
 
-btnDaleClick.addEventListener("click", evento)
+btnLogin.addEventListener("click", validarLogin);
 
-function evento(){
-    console.log(username.value)
-    alert("Le diste click " + username.value)
+// Función para validar el login - con usuario "admin" y contraseña "1234"
+function validarLogin(){
+    if(username.value === "admin" && password.value === "1234"){
+        console.log(username.value);
+        window.location.href = "menu.html";
+        alert("Login exitoso");
+    } else {
+        alert("Login fallido");
+    }
 }
 
-// validar login y que cuando se presione enter tambien funcione
-// mandar llamar con el clic al boton validar el login y con el enter tambien
+// Agregar evento para que al presionar Enter también se valide el login
+btnLogin.addEventListener("keypress", function(event){
+    if(event.key === "Enter"){
+        validarLogin();
+    }
+})
