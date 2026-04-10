@@ -21,7 +21,6 @@ async function validarLogin(){
     }else{
         alert("Credenciales incorrectas");
     }
-
 }
 
 // Agregar evento para que al presionar Enter también se valide el login
