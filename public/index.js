@@ -17,8 +17,8 @@ async function validarLogin(){
     console.log(data);
 
     if(data.isLogin == true){
-        window.location = "./menu.html";
-        sessionStorage.setItem("id", data.user.user_id);
+        sessionStorage.setItem("iduser", data.user.user_id);
+        window.location = `./game.html?userId=${data.user.user_id}`;
     }else{
         alert("Credenciales incorrectas");
     }
